@@ -165,6 +165,39 @@ public class ImageTurtleView implements TurtleView, TurtleEventListener {
       graphics.drawImage(op.filter(turtleLogo, null), xPos, yPos, null);
     }
   }
+  
+  public void drawCircle(int radius) {
+	  ScreenPoint posInWindow = turtleToImageCoordinate(turtle.getPosition());
+
+      if (turtle.getPenState() == PenState.PEN_DOWN) {
+        graphics.setColor(turtle.getPenColor());
+        graphics.setStroke(new BasicStroke(turtle.getPenSize()));
+        graphics.drawArc(posInWindow.getX(), posInWindow.getY(), radius * 2 - 1, radius * 2 - 1, 0, 360);
+      }
+	  
+  }
+  
+  public void fillCircle(int radius) {
+	  ScreenPoint posInWindow = turtleToImageCoordinate(turtle.getPosition());
+
+      if (turtle.getPenState() == PenState.PEN_DOWN) {
+        graphics.setColor(turtle.getPenColor());
+        graphics.setStroke(new BasicStroke(turtle.getPenSize()));
+        graphics.fillArc(posInWindow.getX(), posInWindow.getY(), radius * 2 - 1, radius * 2 - 1, 0, 360);
+      }
+	  
+  }
+  
+  public void fillRect(int width, int height) {
+	  ScreenPoint posInWindow = turtleToImageCoordinate(turtle.getPosition());
+
+      if (turtle.getPenState() == PenState.PEN_DOWN) {
+        graphics.setColor(turtle.getPenColor());
+        graphics.setStroke(new BasicStroke(turtle.getPenSize()));
+        graphics.fillRect(posInWindow.x,  posInWindow.y, width, height);
+      }
+	  
+  }
 
   private ScreenPoint pointInCanvas(ScreenPoint point) {
 

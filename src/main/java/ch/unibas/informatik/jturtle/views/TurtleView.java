@@ -8,6 +8,9 @@ public interface TurtleView extends TurtleEventListener {
   void clear();
   void fill();
   void writeText(String text, int fontSize);
-
+  void drawCircle(int radius);
+  void fillCircle(int radius);
+  void fillRect(int width, int height);
+  
   BufferedImage getImage();
 }
