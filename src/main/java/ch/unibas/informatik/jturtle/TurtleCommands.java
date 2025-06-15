@@ -102,6 +102,18 @@ public class TurtleCommands {
     view.writeText(text, fontSize);
   }
 
+  public static void drawCircle(int radius) {
+	view.drawCircle(radius);
+  }
+  
+  public static void fillCircle(int radius) {
+	view.fillCircle(radius);
+  }
+  
+  public static void fillRect(int width, int height) {
+	  view.fillRect(width, height);
+  }
+  
   public static void drawTurtle() {
     if (view instanceof ImageTurtleView) {
       ((ImageTurtleView) view).drawTurtle();
